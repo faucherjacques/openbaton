@@ -18,6 +18,7 @@
   ],
   "vdu":[
 	{
+	  "name": "pihole-1",
 	  "vm_image":[
 		"xenial"
 	  ],
