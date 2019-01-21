@@ -46,5 +46,5 @@
   ],
   "type":"client",
   "endpoint":"generic",
-  "vnfPackageLocation":"https://github.com/faucherjacques/openbaton/scripts.git",
+  "vnfPackageLocation":"https://github.com/faucherjacques/openbaton/tree/master/scripts",
 }
