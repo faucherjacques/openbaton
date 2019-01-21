@@ -15,8 +15,8 @@ sudo apt-get install screen dialog -y
 echo "test" > /home/ubuntu/step3.txt
 
 #screen curl -sSL https://install.pi-hole.net | bash
-sudo wget https://install.pi-hole.net -O /home/ubuntu/pihole.sh
-sudo chmod +x /home/ubuntu/pihole.sh
+#sudo wget https://install.pi-hole.net -O /home/ubuntu/pihole.sh
+#sudo chmod +x /home/ubuntu/pihole.sh
 
 #sudo /home/ubuntu/pihole.sh <- This is where it doesn't work
 
@@ -47,4 +47,6 @@ API_PRIVACY_MODE=false
 EOF
 
 #This works as long as setupVars exists
-sudo /home/ubuntu/pihole.sh --unattended
+#sudo /home/ubuntu/pihole.sh --unattended
+
+curl -sSL https://install.pi-hole.net | bash /dev/stdin --unattended
