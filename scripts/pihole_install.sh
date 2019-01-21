@@ -12,6 +12,6 @@ sudo apt-get install screen dialog -y
 touch step2.txt
 
 #screen curl -sSL https://install.pi-hole.net | bash
-wget https://install.pi-hole.net -O pihole.sh
-chmod +x pihole.sh
-./pihole.sh
+sudo wget https://install.pi-hole.net -O pihole.sh
+sudo chmod +x pihole.sh
+sudo ./pihole.sh
