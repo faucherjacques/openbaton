@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pihole -a -p
+#pihole -a -p
 
