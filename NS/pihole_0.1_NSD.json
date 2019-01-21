@@ -29,7 +29,7 @@
       "vdu":[
         {
           "vm_image":[
-            "Xenial"
+            "Trusty2"
           ],
           "scale_in_out":1,
           "vnfc":[
