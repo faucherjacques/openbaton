@@ -17,4 +17,5 @@ echo "test" > /home/ubuntu/step3.txt
 #screen curl -sSL https://install.pi-hole.net | bash
 sudo wget https://install.pi-hole.net -O /home/ubuntu/pihole.sh
 sudo chmod +x /home/ubuntu/pihole.sh
-sudo /home/ubuntu/pihole.sh
+
+#sudo /home/ubuntu/pihole.sh <- This is where it doesn't work
