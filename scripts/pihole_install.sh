@@ -23,18 +23,17 @@ echo "test" > /home/ubuntu/step3.txt
 #TODO: create /etc/pihole/setupVars.conf
 # This means we need to extract our IPv4 address
 
+sudo mkdir /etc/pihole
+
 sudo cat > /etc/pihole/setupVars.conf <<EOF
 WEBPASSWORD=a215bae8b5ec659b0980a76dlkds09644731cd439cab41494447a8705c22b3aa41c
 PIHOLE_INTERFACE=eth0
-IPV4_ADDRESS=1.1.1.1/24 #To be changed by the proper one
-IPV6_ADDRESS=2601:444:8111:403:55d6:2f11:41bf:13bb #To be removed
+IPV4_ADDRESS=$private/24 #To be changed by the proper one
 QUERY_LOGGING=true
 INSTALL_WEB=true
 DNSMASQ_LISTENING=single
-PIHOLE_DNS_1=208.67.222.222 #To be changed to google's
-PIHOLE_DNS_2=208.67.220.220
-PIHOLE_DNS_3=2620:0:ccc::2 #To be removed
-PIHOLE_DNS_4=2620:0:ccd::2 #To be removed
+PIHOLE_DNS_1=8.8.8.8
+PIHOLE_DNS_2=8.8.4.4
 DNS_FQDN_REQUIRED=true
 DNS_BOGUS_PRIV=true
 DNSSEC=true
@@ -51,11 +50,5 @@ IPADDR=$private
 FLOATING=$private_floatingIp
 EOF
 
-sudo sed -i "s/1.1.1.1/$private/" /etc/pihole/setupVars.conf
-
-echo $private > /home/ubuntu/testecho.txt
-
 #This works as long as setupVars exists
-sudo /home/ubuntu/pihole.sh | bash /dev/stdin --unattended
-
-#curl -sSL https://install.pi-hole.net | bash /dev/stdin --unattended
+#sudo /home/ubuntu/pihole.sh | bash /dev/stdin --unattended
