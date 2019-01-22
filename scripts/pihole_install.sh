@@ -26,7 +26,7 @@ echo "test" > /home/ubuntu/step3.txt
 sudo cat > /etc/pihole/setupVars.conf <<EOF
 WEBPASSWORD=a215bae8b5ec659b0980a76dlkds09644731cd439cab41494447a8705c22b3aa41c
 PIHOLE_INTERFACE=eth0
-IPV4_ADDRESS=192.168.1.250/24 #To be changed by the proper one
+IPV4_ADDRESS=1.1.1.1/24 #To be changed by the proper one
 IPV6_ADDRESS=2601:444:8111:403:55d6:2f11:41bf:13bb #To be removed
 QUERY_LOGGING=true
 INSTALL_WEB=true
@@ -46,7 +46,16 @@ API_QUERY_LOG_SHOW=all
 API_PRIVACY_MODE=false
 EOF
 
-#This works as long as setupVars exists
-#sudo /home/ubuntu/pihole.sh --unattended
+cat > /home/ubuntu/testcat.txt <<EOF
+IPADDR=$private
+FLOATING=$private_floatingIp
+EOF
 
-curl -sSL https://install.pi-hole.net | bash /dev/stdin --unattended
+sudo sed -i "s/1.1.1.1/$private/" /etc/pihole/setupVars.conf
+
+echo $private > /home/ubuntu/testecho.txt
+
+#This works as long as setupVars exists
+sudo /home/ubuntu/pihole.sh | bash /dev/stdin --unattended
+
+#curl -sSL https://install.pi-hole.net | bash /dev/stdin --unattended
