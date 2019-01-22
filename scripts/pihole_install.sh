@@ -1,6 +1,8 @@
 #!/bin/bash
 
 export DEBIAN_FRONTEND=noninteractive
+networkAddr=$shared_admin
+net_floatingIp=$shared_admin_floatingIp
 
 echo "test" > /home/ubuntu/step1.txt
 
@@ -23,7 +25,7 @@ sudo mkdir /etc/pihole
 sudo cat > /etc/pihole/setupVars.conf <<EOF
 WEBPASSWORD=a215bae8b5ec659b0980a76dlkds09644731cd439cab41494447a8705c22b3aa41c
 PIHOLE_INTERFACE=eth0
-IPV4_ADDRESS=$private/24 #To be changed by the proper one
+IPV4_ADDRESS=$networkAddr/24 #To be changed by the proper one
 QUERY_LOGGING=true
 INSTALL_WEB=true
 DNSMASQ_LISTENING=single
@@ -41,8 +43,8 @@ API_PRIVACY_MODE=false
 EOF
 
 cat > /home/ubuntu/testcat.txt <<EOF
-IPADDR=$private
-FLOATING=$private_floatingIp
+IPADDR=$networkAddr
+FLOATING=$net_floatingIp
 EOF
 
 #This does not return an error, but doesn't work at all
