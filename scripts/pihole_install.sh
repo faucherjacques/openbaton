@@ -18,11 +18,6 @@ echo "test" > /home/ubuntu/step3.txt
 #sudo wget https://install.pi-hole.net -O /home/ubuntu/pihole.sh
 #sudo chmod +x /home/ubuntu/pihole.sh
 
-#sudo /home/ubuntu/pihole.sh <- This is where it doesn't work
-
-#TODO: create /etc/pihole/setupVars.conf
-# This means we need to extract our IPv4 address
-
 sudo mkdir /etc/pihole
 
 sudo cat > /etc/pihole/setupVars.conf <<EOF
@@ -50,5 +45,5 @@ IPADDR=$private
 FLOATING=$private_floatingIp
 EOF
 
-#This works as long as setupVars exists
+#This does not return an error, but doesn't work at all
 #sudo /home/ubuntu/pihole.sh | bash /dev/stdin --unattended

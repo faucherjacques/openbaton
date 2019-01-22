@@ -4,7 +4,7 @@
   "version":"0.1",
   "vld":[
     {
-      "name":"private"
+      "name":"shared_admin"
     }
   ],
   "vnfd":[
@@ -23,7 +23,7 @@
       ],
       "virtual_link":[
         {
-          "name":"private"
+          "name":"shared_admin"
         }
       ],
       "vdu":[
@@ -36,7 +36,7 @@
             {
               "connection_point":[
                 {
-                  "virtual_link_reference":"private",
+                  "virtual_link_reference":"shared_admin",
                   "interfaceId":0
                 }
               ]
